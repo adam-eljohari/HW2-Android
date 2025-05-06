@@ -1,6 +1,7 @@
 package com.example.hw2_android
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.location.LocationManager
 import android.location.LocationListener
 import android.os.Bundle
@@ -45,6 +46,7 @@ class HighScoreActivity : AppCompatActivity(), EasyPermissions.PermissionCallbac
         main_FRAME_map = findViewById(R.id.main_FRAME_map)
     }
 
+    @SuppressLint("CommitTransaction")
     private fun initViews() {
         highScoreFragment = HighScoreFragment()
 //        mapFragment = SupportMapFragment.newInstance()
