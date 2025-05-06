@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background ="@color/white" >
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/settings_BTN_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/toggle_string"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size"
+        android:backgroundTint="@color/red"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/settings_LBL_speed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_BTN_switch"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="@string/string_speed"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/black">
+    </com.google.android.material.textview.MaterialTextView>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/settings_BTN_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/gray"
+        android:layout_below="@id/settings_LBL_speed"
+        android:layout_centerInParent="true"
+        android:entries="@array/Speed"
+        android:minHeight="48dp"
+        android:textSize="@dimen/text_size"
+        android:textStyle="bold" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/settings_BTN_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_BTN_speed"
+        android:layout_centerInParent="true"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size"
+        android:backgroundTint="@color/gray"
+        android:text="@string/save_changes" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/settings_BTN_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settings_BTN_save"
+        android:layout_centerInParent="true"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size"
+        android:backgroundTint="@color/red"
+        android:text="@string/string_cancel" />
+
+</RelativeLayout>

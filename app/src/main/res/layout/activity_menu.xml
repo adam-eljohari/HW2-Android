@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background ="@color/white" >
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/menu_LBL_gameName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/string_gameName"
+        android:layout_margin="@dimen/default_margin"
+        android:textSize="40sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textStyle="bold">
+
+    </com.google.android.material.textview.MaterialTextView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/menu_BTN_start"
+        android:layout_below="@id/menu_LBL_gameName"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/startGame_string"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size"
+        android:backgroundTint="@color/blue"
+        android:layout_marginBottom="@dimen/default_margin" />
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/menu_BTN_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_setting"
+        android:layout_below="@id/menu_BTN_start"
+        android:layout_centerInParent="true"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size"
+        android:backgroundTint="@color/gray"
+        android:layout_marginBottom="@dimen/default_margin" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/menu_BTN_records"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_records"
+        android:layout_below="@id/menu_BTN_settings"
+        android:layout_centerInParent="true"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size"
+        android:backgroundTint="@color/gray"
+        android:layout_marginBottom="@dimen/default_margin" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/menu_BTN_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/menu_BTN_records"
+        android:layout_centerInParent="true"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size"
+        android:backgroundTint="@color/red"
+        android:text="@string/string_exit" />
+</RelativeLayout>

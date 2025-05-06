@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">HW2-Android</string>
+    <string name="left">left</string>
+    <string name="right">right</string>
+    <string name="score_string_text">Score: 100</string>
+    <string name="title">title</string>
+    <string name="startGame_string">Start Game</string>
+    <string name="string_exit">Exit</string>
+    <string name="string_speed">Speed :</string>
+    <string name="string_setting">Setting</string>
+    <string name="string_cancel">Cancel</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="string_records">Records</string>
+    <string name="string_gameName">star war</string>
+    <string name="toggle_string">Sensors:  </string>
+    <string-array name="Speed">
+        <item>Slow</item>
+        <item>Fast</item>
+    </string-array>
+</resources>
