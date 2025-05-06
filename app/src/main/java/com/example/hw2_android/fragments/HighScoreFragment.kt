@@ -46,7 +46,7 @@ class HighScoreFragment  : Fragment() {
 
     private fun findViews(v: View) {
         highScore_LBL_title = v.findViewById(R.id.highScore_LBL_title)
-        highScore_RV_records = v.findViewById(R.id.highScore_RV_records)
+//        highScore_RV_records = v.findViewById(R.id.highScore_RV_records)
     }
 
     private fun initViews(context: Context?) {
