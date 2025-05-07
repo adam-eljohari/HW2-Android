@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HW2-Android</string>
+    <string name="app_name">Star War</string>
     <string name="left">left</string>
     <string name="right">right</string>
     <string name="score_string_text">Score: 100</string>
