@@ -348,7 +348,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateCoins() {
+    private fun updateCoins(hitCoin : Boolean) {
+
         for (row in main_IMG_coins.indices) {
             for (col in main_IMG_coins[row].indices) {
                 if (gameManager.coinMatrix[row][col]) {
@@ -375,7 +376,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             updatePlayers()
             updateObstacles()
-            updateCoins()
+
             if (gameManager.checkCollisionObstacle()) {
                 showMessage("You hit the moon , it's not good!")
 //                SingleSoundPlayer(this).playSound(R.raw.crash_sound)
@@ -383,7 +384,11 @@ class MainActivity : AppCompatActivity() {
             }
             if (gameManager.checkCollisionCoin()) {
                 showMessage("Nice")
+                updateCoins(true)
 //                SingleSoundPlayer(this).playSound(R.raw.collect_coins)
+            }
+            else{
+                updateCoins(false)
             }
             gameManager.updateScore()
             main_LBL_score.text = gameManager.score.toString()

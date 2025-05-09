@@ -149,9 +149,8 @@
         android:id="@+id/main_gridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/main_IMG_hearts"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_above="@id/main_FAB_right"
         android:columnCount="5"
         android:rowCount="8">
 
