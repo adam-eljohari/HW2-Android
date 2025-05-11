@@ -39,7 +39,8 @@
         app:icon="@drawable/arrow_right"
         android:textStyle="bold"
         app:iconGravity="end"
-        app:iconTint="@color/black" >
+        app:iconTint="@color/black"
+        tools:ignore="RelativeOverlap">
     </com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -808,7 +809,8 @@
             android:layout_column="0"
             android:visibility="invisible"
             android:layout_margin="@dimen/default_margin_obstacle"
-            app:srcCompat="@drawable/coin" />
+            app:srcCompat="@drawable/coin"
+            tools:ignore="TooManyViews" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin32"
