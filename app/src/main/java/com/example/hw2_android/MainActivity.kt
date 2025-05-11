@@ -264,7 +264,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         )
-        tiltDetector.start()
     }
 
     override fun onResume() {
@@ -380,13 +379,14 @@ class MainActivity : AppCompatActivity() {
             if (gameManager.checkCollisionObstacle()) {
                 showMessage("You hit the moon , it's not good!")
 //                SingleSoundPlayer(this).playSound(R.raw.crash_sound)
-                updateHearts()
             }
             if (gameManager.checkCollisionCoin()) {
                 showMessage("Nice")
 //                SingleSoundPlayer(this).playSound(R.raw.collect_coins)
+            }else{
+                gameManager.updateScore()
+
             }
-            gameManager.updateScore()
             main_LBL_score.text = gameManager.score.toString()
             updateHearts()
         }

@@ -29,21 +29,20 @@ class TiltDetector (context: Context, private val tiltCallback: TiltCallback?) {
             }
 
             override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
-
-
+                //pass
             }
         }
     }
 
 
-    private fun calculateTilt(c: Float) {
+    private fun calculateTilt(x: Float) {
         if (System.currentTimeMillis() - timestamp >= Constants.GameLogic.DELAY_MILLIS) {
             timestamp = System.currentTimeMillis()
-            if (c >= 3){
+            if (x >= 3.0){
                 tiltCounterX--
                 tiltCallback?.tiltX()
             }
-            if (c <= -3) {
+            if (x <= -3.0) {
                 tiltCounterX++
                 tiltCallback?.tiltX()
             }

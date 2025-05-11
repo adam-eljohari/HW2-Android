@@ -23,7 +23,8 @@
         android:textStyle="bold"
         app:icon="@drawable/arrow_left"
         app:iconGravity="start"
-        app:iconTint="@color/black" />
+        app:iconTint="@color/black" >
+    </com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/main_FAB_right"
@@ -38,60 +39,8 @@
         app:icon="@drawable/arrow_right"
         android:textStyle="bold"
         app:iconGravity="end"
-        app:iconTint="@color/black" />
-
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/main_IMG_players"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/margin_bottom_for_player"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_above="@id/main_FAB_right">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_player1"
-            android:layout_width="@dimen/player_width"
-            android:layout_height="@dimen/player_height"
-            android:layout_weight="1"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/spaceship" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_player2"
-            android:layout_width="@dimen/player_width"
-            android:layout_height="@dimen/player_height"
-            android:layout_weight="1"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/spaceship" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_player3"
-            android:layout_width="@dimen/player_width"
-            android:layout_height="@dimen/player_height"
-            android:layout_weight="1"
-            android:visibility="visible"
-            app:srcCompat="@drawable/spaceship" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_player4"
-            android:layout_width="@dimen/player_width"
-            android:layout_height="@dimen/player_height"
-            android:layout_weight="1"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/spaceship" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_IMG_player5"
-            android:layout_width="@dimen/player_width"
-            android:layout_height="@dimen/player_height"
-            android:layout_weight="1"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/spaceship" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
+        app:iconTint="@color/black" >
+    </com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/main_IMG_hearts"
@@ -140,7 +89,8 @@
         android:layout_marginLeft="@dimen/default_margin"
         android:textSize="@dimen/default_text_size"
         android:textStyle="bold"
-        tools:text="000" />
+        tools:text="000"
+        tools:ignore="RelativeOverlap" />
 
 
 
@@ -150,7 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_above="@id/main_FAB_right"
+        android:layout_centerVertical="true"
         android:columnCount="5"
         android:rowCount="8">
 
@@ -926,7 +876,7 @@
             android:layout_height="@dimen/obstacle_size"
             android:layout_row="7"
             android:layout_column="2"
-            android:visibility="invisible"
+            android:visibility="visible"
             android:layout_margin="@dimen/default_margin_obstacle"
             app:srcCompat="@drawable/coin" />
 
@@ -951,5 +901,58 @@
             app:srcCompat="@drawable/coin" />
 
     </GridLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main_IMG_players"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginBottom="@dimen/margin_bottom_for_player"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_above="@id/main_FAB_right">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_player1"
+            android:layout_width="@dimen/player_width"
+            android:layout_height="@dimen/player_height"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/spaceship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_player2"
+            android:layout_width="@dimen/player_width"
+            android:layout_height="@dimen/player_height"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/spaceship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_player3"
+            android:layout_width="@dimen/player_width"
+            android:layout_height="@dimen/player_height"
+            android:layout_weight="1"
+            android:visibility="visible"
+            app:srcCompat="@drawable/spaceship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_player4"
+            android:layout_width="@dimen/player_width"
+            android:layout_height="@dimen/player_height"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/spaceship" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_player5"
+            android:layout_width="@dimen/player_width"
+            android:layout_height="@dimen/player_height"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/spaceship" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </RelativeLayout>

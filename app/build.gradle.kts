@@ -43,6 +43,8 @@ dependencies {
 
     implementation (libs.gson)
     implementation (libs.easypermissions)
+    implementation (libs.glide)
+
 
 
 
