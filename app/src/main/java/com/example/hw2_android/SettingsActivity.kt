@@ -15,6 +15,9 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var settings_BTN_save: MaterialButton
     private lateinit var settings_BTN_cancel: MaterialButton
 
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
@@ -30,10 +33,9 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        val speeds = arrayOf("Slow", "Fast")
+        val speeds = arrayOf("Slow","Normal", "Fast")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, speeds)
         settings_BTN_speed.adapter = adapter
-
         settings_BTN_save.setOnClickListener {
             saveSettings()
         }

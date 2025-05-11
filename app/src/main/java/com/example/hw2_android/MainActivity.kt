@@ -20,6 +20,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.hw2_android.logic.GameManager
 import com.example.hw2_android.interfaces.TiltCallback
 import com.example.hw2_android.utilities.Constants
+import com.example.hw2_android.utilities.SingleSoundPlayer
 import com.example.hw2_android.utilities.TiltDetector
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.android.material.textview.MaterialTextView
@@ -44,14 +45,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tiltDetector: TiltDetector
 
     private var isUsingSensors: Boolean = false
-    private var selectedSpeed: String = "Slow"
+    private var selectedSpeed: String = "Normal"
     private val speed: Long
         get() = speedToDelay(selectedSpeed)
-
-
-
-
-
 
     val handler = Handler(Looper.getMainLooper())
 
@@ -77,7 +73,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         isUsingSensors = intent.getBooleanExtra("IS_USING_SENSORS", false)
-        selectedSpeed = intent.getStringExtra("SELECTED_SPEED") ?: "Slow"
+        selectedSpeed = intent.getStringExtra("SELECTED_SPEED") ?: "Normal"
         findViews()
         gameManager = GameManager(main_IMG_hearts.size)
         initViews()
@@ -99,9 +95,6 @@ class MainActivity : AppCompatActivity() {
             findViewById(R.id.main_IMG_heart3)
         )
 
-        main_FAB_right = findViewById(R.id.main_FAB_right)
-        main_FAB_left = findViewById(R.id.main_FAB_left)
-
         main_IMG_players = arrayOf(
             findViewById(R.id.main_IMG_player1),
             findViewById(R.id.main_IMG_player2),
@@ -109,6 +102,10 @@ class MainActivity : AppCompatActivity() {
             findViewById(R.id.main_IMG_player4),
             findViewById(R.id.main_IMG_player5)
         )
+
+        main_FAB_right = findViewById(R.id.main_FAB_right)
+        main_FAB_left = findViewById(R.id.main_FAB_left)
+
         main_IMG_obstacles = arrayOf(
             arrayOf(
                 findViewById(R.id.main_IMG_obstacle1),
@@ -245,7 +242,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun speedToDelay(speed: String): Long {
         return when (speed) {
-            "Slow" -> Constants.GameLogic.DELAY_MILLIS
+            "Slow" -> Constants.GameLogic.DELAY_MILLIS * 2
+            "Normal" -> Constants.GameLogic.DELAY_MILLIS
             "Fast" -> Constants.GameLogic.DELAY_MILLIS / 2
             else -> Constants.GameLogic.DELAY_MILLIS
         }
@@ -264,6 +262,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         )
+        tiltDetector.start()
     }
 
     override fun onResume() {
@@ -378,11 +377,11 @@ class MainActivity : AppCompatActivity() {
             updateCoins()
             if (gameManager.checkCollisionObstacle()) {
                 showMessage("You hit the moon , it's not good!")
-//                SingleSoundPlayer(this).playSound(R.raw.crash_sound)
+                SingleSoundPlayer(this).playSound(R.raw.boom_sound)
             }
             if (gameManager.checkCollisionCoin()) {
                 showMessage("Nice")
-//                SingleSoundPlayer(this).playSound(R.raw.collect_coins)
+                SingleSoundPlayer(this).playSound(R.raw.coin_collect)
             }else{
                 gameManager.updateScore()
 

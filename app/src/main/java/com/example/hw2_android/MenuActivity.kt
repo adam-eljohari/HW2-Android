@@ -12,8 +12,11 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var menu_BTN_exit: MaterialButton
     private lateinit var menu_BTN_records: MaterialButton
 
+
     private var isUsingSensors: Boolean = false
-    private var selectedSpeed: String = "Slow"
+    private var selectedSpeed: String = "Normal"
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +25,7 @@ class MenuActivity : AppCompatActivity() {
         findViews()
         initViews()
     }
+
 
     private fun findViews() {
         menu_BTN_start = findViewById(R.id.menu_BTN_start)
@@ -55,7 +59,7 @@ class MenuActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == SETTINGS_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
             val isUsingSensors = data.getBooleanExtra("IS_USING_SENSORS", false)
-            val selectedSpeed = data.getStringExtra("SELECTED_SPEED") ?: "Slow"
+            val selectedSpeed = data.getStringExtra("SELECTED_SPEED") ?: "Normal"
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("IS_USING_SENSORS", isUsingSensors)
             intent.putExtra("SELECTED_SPEED", selectedSpeed)
