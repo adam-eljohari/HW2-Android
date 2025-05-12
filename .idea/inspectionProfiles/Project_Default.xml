@@ -3,9 +3,11 @@
     <option name="myName" value="Project Default" />
     <inspection_tool class="AndroidLintRtlHardcoded" enabled="true" level="INFORMATION" enabled_by_default="true" />
     <inspection_tool class="KotlinConstantConditions" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="KotlinRedundantOverride" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="MemberVisibilityCanBePrivate" enabled="true" level="INFORMATION" enabled_by_default="true" />
     <inspection_tool class="PrivatePropertyName" enabled="true" level="INFORMATION" enabled_by_default="true" />
     <inspection_tool class="PropertyName" enabled="true" level="INFORMATION" enabled_by_default="true" />
+    <inspection_tool class="RedundantNullableReturnType" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SameParameterValue" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="UnstableApiUsage" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="UnusedSymbol" enabled="false" level="WARNING" enabled_by_default="false" />

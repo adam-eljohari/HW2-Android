@@ -44,8 +44,7 @@ class MenuActivity : AppCompatActivity() {
         }
 
         menu_BTN_records.setOnClickListener {
-            val intent = Intent(this, HighScoreActivity::class.java)
-            startActivity(intent)
+            openRecord()
 
         }
 
@@ -79,6 +78,11 @@ class MenuActivity : AppCompatActivity() {
         val intent = Intent(this, SettingsActivity::class.java)
         @Suppress("DEPRECATION")
         startActivityForResult(intent, SETTINGS_REQUEST_CODE)
+    }
+
+    private fun openRecord() {
+        val intent = Intent(this, HighScoreActivity::class.java)
+        startActivity(intent)
     }
 
     private fun exitGame() {

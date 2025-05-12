@@ -9,8 +9,17 @@
     android:orientation="vertical"
     tools:context=".HighScoreActivity">
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/highScores_BTN_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Back"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="40dp"
+        />
+
     <FrameLayout
-        android:id="@+id/main_FRAME_list"
+        android:id="@+id/main_FRAME_highScores"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

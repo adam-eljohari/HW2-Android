@@ -5,24 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue"
-    tools:context=".fragments.HighScoreFragment">
+    tools:context=".ui.HighScoresFragment">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/highScore_LBL_title"
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/highScores_ET_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
+        android:layout_height="100dp"
         android:layout_centerInParent="true"
-        android:text="@string/title"
-        android:textSize="@dimen/text_size"
-        />
+        android:inputType="text"
+        android:gravity="center"
+        android:hint="@string/please_enter_location" />
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/highScore_RV_records"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:padding="@dimen/default_margin"-->
-<!--        tools:listitem="@layout/high_score"-->
-<!--        tools:itemCount="10" />-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/highScores_BTN_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send"
+        android:layout_below="@id/highScores_ET_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/default_margin"
+        />
 
 </RelativeLayout>
