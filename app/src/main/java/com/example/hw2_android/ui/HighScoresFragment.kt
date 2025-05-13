@@ -28,8 +28,7 @@ class HighScoresFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
         val view: View = inflater.inflate(R.layout.fragment_high_score, container, false)
         findViews(view)
         initViews(view)

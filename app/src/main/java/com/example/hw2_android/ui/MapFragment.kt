@@ -9,6 +9,7 @@ import com.example.hw2_android.R
 import com.google.android.material.textview.MaterialTextView
 
 class MapFragment : Fragment() {
+
     private lateinit var map_LBL_title: MaterialTextView
 
 
@@ -19,8 +20,7 @@ class MapFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+        savedInstanceState: Bundle?): View {
         val view: View = inflater.inflate(R.layout.fragment_map, container, false)
         findViews(view)
         return view

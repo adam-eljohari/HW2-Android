@@ -46,10 +46,7 @@ class HighScoreActivity : AppCompatActivity() {
         }
 
         mapFragment = MapFragment()
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.main_FRAME_map, mapFragment)
-            .commit()
+        supportFragmentManager.beginTransaction().add(R.id.main_FRAME_map, mapFragment).commit()
 
         highScoresFragment = HighScoresFragment()
         highScoresFragment.highScoreItemClicked =
@@ -58,10 +55,7 @@ class HighScoreActivity : AppCompatActivity() {
                     mapFragment.zoom(lat, lon)
                 }
             }
-        supportFragmentManager
-            .beginTransaction()
-            .add(R.id.main_FRAME_highScores, highScoresFragment)
-            .commit()
+        supportFragmentManager.beginTransaction().add(R.id.main_FRAME_highScores, highScoresFragment).commit()
     }
 
     private fun backToMenu() {
