@@ -878,7 +878,7 @@
             android:layout_height="@dimen/obstacle_size"
             android:layout_row="7"
             android:layout_column="2"
-            android:visibility="visible"
+            android:visibility="invisible"
             android:layout_margin="@dimen/default_margin_obstacle"
             app:srcCompat="@drawable/coin" />
 

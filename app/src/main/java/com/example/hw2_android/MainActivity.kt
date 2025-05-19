@@ -267,7 +267,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-//        BackgroundMusicPlayer.getInstance().playMusic()
         if (isUsingSensors) {
             tiltDetector.start()
         }
@@ -275,7 +274,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
-//        BackgroundMusicPlayer.getInstance().pauseMusic()
         if (isUsingSensors)
             tiltDetector.stop()
     }

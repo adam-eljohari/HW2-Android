@@ -2,7 +2,6 @@ package com.example.hw2_android
 
 import android.app.Application
 import com.example.hw2_android.logic.ScoreManager
-import com.example.hw2_android.utilities.BackgroundMusicPlayer
 
 class App: Application() {
     override fun onCreate() {
