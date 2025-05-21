@@ -6,16 +6,11 @@ import com.example.hw2_android.logic.ScoreManager
 class App: Application() {
     override fun onCreate() {
         super.onCreate()
-
-        BackgroundMusicPlayer.init(this)
-        BackgroundMusicPlayer.getInstance().setResourceId(R.raw.background_music)
         ScoreManager.getInstance(this)
         ScoreManager.getInstance(this).loadScores()
     }
 
     override fun onTerminate() {
         super.onTerminate()
-        BackgroundMusicPlayer.getInstance().stopMusic()
-
     }
 }
