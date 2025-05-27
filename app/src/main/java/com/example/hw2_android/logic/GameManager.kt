@@ -6,6 +6,8 @@ class GameManager(private val lifeCount:Int = 3, private val numOfLanes : Int = 
 
     var score: Int = 0
         private set
+    var odometer: Int = 0
+        private set
 
     var playerPosition = 1
     var hitPosition = 0
@@ -108,5 +110,8 @@ class GameManager(private val lifeCount:Int = 3, private val numOfLanes : Int = 
 
     fun updateScore() {
         score += Constants.GameLogic.AVOID_POINTS
+    }
+    fun updateOdometer() {
+        odometer += 1
     }
 }

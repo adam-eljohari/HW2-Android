@@ -23,7 +23,8 @@
         android:textStyle="bold"
         app:icon="@drawable/arrow_left"
         app:iconGravity="start"
-        app:iconTint="@color/black" >
+        app:iconTint="@color/black"
+        tools:ignore="RtlHardcoded">
     </com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
@@ -80,21 +81,44 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="RelativeOverlap">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_IMG_coin"
+            android:layout_width="@dimen/obstacle_size"
+            android:layout_height="@dimen/obstacle_size"
+            android:layout_marginTop="35dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/coin" />
+
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/main_LBL_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="@dimen/default_margin"
-        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="8dp"
         android:textSize="@dimen/default_text_size"
         android:textStyle="bold"
         tools:text="000"
+        android:textColor="@color/gold"
         tools:ignore="RelativeOverlap" />
 
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
-
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_LBL_odometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/main_gridLayout"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/default_text_size"
+        android:textStyle="bold"
+        tools:text="0000"
+        tools:ignore="RelativeOverlap" />
 
     <GridLayout
         android:id="@+id/main_gridLayout"

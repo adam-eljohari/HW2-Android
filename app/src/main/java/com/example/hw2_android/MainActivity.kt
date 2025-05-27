@@ -28,6 +28,8 @@ import com.google.android.material.textview.MaterialTextView
 class MainActivity : AppCompatActivity() {
     private lateinit var main_IMG_hearts: Array<AppCompatImageView>
 
+    private lateinit var main_LBL_odometer:MaterialTextView
+
     private lateinit var main_LBL_score: MaterialTextView
 
     private lateinit var main_FAB_right: ExtendedFloatingActionButton
@@ -88,6 +90,8 @@ class MainActivity : AppCompatActivity() {
     private fun findViews() {
 
         main_LBL_score = findViewById(R.id.main_LBL_score)
+
+        main_LBL_odometer = findViewById(R.id.main_LBL_odometer)
 
         main_IMG_hearts = arrayOf(
             findViewById(R.id.main_IMG_heart1),
@@ -235,6 +239,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
         main_LBL_score.text = gameManager.score.toString()
+        main_LBL_odometer.text = gameManager.odometer.toString()
+
         refreshUI()
         isRunning = true
         handler.postDelayed(runnable, Constants.GameLogic.DELAY_MILLIS)
@@ -382,8 +388,9 @@ class MainActivity : AppCompatActivity() {
                 SingleSoundPlayer(this).playSound(R.raw.coin_collect)
             }else{
                 gameManager.updateScore()
-
+                gameManager.updateOdometer()
             }
+            main_LBL_odometer.text = gameManager.odometer.toString()
             main_LBL_score.text = gameManager.score.toString()
             updateHearts()
         }
