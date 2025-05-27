@@ -804,7 +804,8 @@
             android:layout_column="2"
             android:visibility="invisible"
             android:layout_margin="@dimen/default_margin_obstacle"
-            app:srcCompat="@drawable/coin" />
+            app:srcCompat="@drawable/coin"
+            tools:ignore="TooManyViews" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_coin29"

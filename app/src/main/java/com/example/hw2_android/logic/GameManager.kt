@@ -109,9 +109,11 @@ class GameManager(private val lifeCount:Int = 3, private val numOfLanes : Int = 
     }
 
     fun updateScore() {
-        score += Constants.GameLogic.AVOID_POINTS
+        if(odometer >= 100){
+            score += Constants.GameLogic.AVOID_POINTS
+        }
     }
     fun updateOdometer() {
-        odometer += 1
+        odometer += Constants.GameLogic.AVOID_DISTANCE
     }
 }
