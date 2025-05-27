@@ -1,58 +1,74 @@
 package com.example.hw2_android.ui
 
+import adapter.HighScoreAdapter
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.hw2_android.HighScoreActivity
 import com.example.hw2_android.R
 import com.example.hw2_android.interfaces.CallbackHighScoreClicked
-import com.google.android.material.button.MaterialButton
-import com.google.android.material.textfield.TextInputEditText
+import com.example.hw2_android.item_model.Score
+import com.example.hw2_android.logic.ScoreManager
+
+import com.google.android.material.textview.MaterialTextView
 
 class HighScoresFragment : Fragment() {
 
 
-    private lateinit var highScores_ET_text: TextInputEditText
-
-    private lateinit var highScores_BTN_send: MaterialButton
+    lateinit var highScore_LBL_title: MaterialTextView
+    private lateinit var highScore_RV_records: RecyclerView
+    private var score: MutableList<Score> = mutableListOf()
+   private val highScoreAdapter = HighScoreAdapter(score)
 
     private lateinit var highScoreActivity: HighScoreActivity
 
     var highScoreItemClicked: CallbackHighScoreClicked? = null
+        set(value) {
+            field = value
+           highScoreAdapter.callback = value
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
-        val view: View = inflater.inflate(R.layout.fragment_high_score, container, false)
-        findViews(view)
-        initViews(view)
-        return view
+        savedInstanceState: Bundle?
+    ): View? {
+        val v = inflater.inflate(R.layout.fragment_high_score, container, false)
+        findViews(v)
+        initViews(context)
+        return v
     }
 
-    private fun initViews(view: View) {
-        highScores_BTN_send.setOnClickListener { v: View ->
-            val coordinates = highScores_ET_text.text?.split(",")
-            val lat: Double = coordinates?.getOrNull(0)?.toDoubleOrNull() ?: 0.0
-            val lon: Double = coordinates?.getOrNull(1)?.toDoubleOrNull() ?: 0.0
 
-            itemClicked(lat, lon)
+    private fun findViews(v: View) {
+        highScore_LBL_title = v.findViewById(R.id.highScore_LBL_title)
+        highScore_RV_records = v.findViewById(R.id.highScore_RV_records)
+    }
+
+    private fun initViews(context: Context?) {
+        if (context == null) {
+            return
         }
-
+        highScore_RV_records.adapter = highScoreAdapter
+        highScoreAdapter.callback = object : CallbackHighScoreClicked {
+            override fun highScoreItemClicked(lat: Double, lon: Double) {
+                highScoreItemClicked?.highScoreItemClicked(lat, lon)
+            }
+        }
+        highScore_RV_records.layoutManager = LinearLayoutManager(context)
     }
 
-
-    private fun itemClicked(lat: Double, lon: Double) {
-        highScoreItemClicked?.highScoreItemClicked(lat, lon)
-    }
-
-    private fun findViews(view: View) {
-        highScores_ET_text = view.findViewById(R.id.highScores_ET_text)
-        highScores_BTN_send = view.findViewById(R.id.highScores_BTN_send)
+    fun updateHighScore() {
+        val newScores = ScoreManager.getInstance(requireContext()).scores
+        highScoreAdapter.updateScores(newScores)
     }
 }

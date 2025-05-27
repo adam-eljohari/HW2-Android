@@ -13,6 +13,7 @@
     <dimen name="obstacle_size">40dp</dimen>
     <dimen name="text_size">20sp</dimen>
     <dimen name="margin">10dp</dimen>
+    <dimen name="data_card_margin">5dp</dimen>
     <dimen name="data_margin">5dp</dimen>
     <dimen name="padding">16dp</dimen>
 </resources>

@@ -4,6 +4,7 @@
     <string name="right">right</string>
     <string name="score_string_text">Score: 000</string>
     <string name="title">title</string>
+    <string name="high_score_title">TOP 10 records</string>
     <string name="startGame_string">Start Game</string>
     <string name="string_exit">Exit</string>
     <string name="string_speed">Speed :</string>
